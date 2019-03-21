@@ -1,0 +1,9 @@
+{
+  "name": "offline-banner",
+  "version": "0.0.1",
+  "description": "It detects whether frontend is able to connect to backend.",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  }
+}

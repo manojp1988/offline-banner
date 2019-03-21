@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "offline-banner": [
+        "dist/offline-banner"
+      ],
+      "offline-banner/*": [
+        "dist/offline-banner/*"
+      ]
+    }
   }
 }

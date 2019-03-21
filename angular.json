@@ -130,6 +130,41 @@
           }
         }
       }
+    },
+    "offline-banner": {
+      "root": "projects/offline-banner",
+      "sourceRoot": "projects/offline-banner/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/offline-banner/tsconfig.lib.json",
+            "project": "projects/offline-banner/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/offline-banner/src/test.ts",
+            "tsConfig": "projects/offline-banner/tsconfig.spec.json",
+            "karmaConfig": "projects/offline-banner/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/offline-banner/tsconfig.lib.json",
+              "projects/offline-banner/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "offlineDetection"
