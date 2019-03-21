@@ -7,40 +7,15 @@ import { OfflineBannerService } from './offline-banner.service';
   selector: 'offline-banner',
   template: `
     <div class="container">
-      <p class="banner offline-banner" *ngIf="(network$ | async) === 'OFFLINE'">
-        You are offline. Retrying in {{ countdown$ | async }}sec.
-      </p>
-      <p class="banner online-banner" *ngIf="(network$ | async) === 'ONLINE' && (onlineMessage$ | async)">
+      <span class="banner offline-banner" *ngIf="(network$ | async) === 'OFFLINE'">
+        You are offline. Retrying in {{ countdown$ | async }}sec. <span class="offline-ui-waiting"></span>
+      </span>
+      <span class="banner online-banner" *ngIf="(network$ | async) === 'ONLINE' && (onlineMessage$ | async)">
         You are online
-      </p>
+      </span>
     </div>
   `,
-  styles: [
-    `
-      .container {
-        position: fixed;
-        left: 42%;
-        right: 23%;
-        max-width: 260px;
-      }
-
-      .banner {
-        margin: auto;
-        padding: 8px;
-        text-align: center;
-      }
-
-      .offline-banner {
-        background-color: #f8ecad;
-        color: #7c6d1f;
-      }
-
-      .online-banner {
-        background-color: #d6e9c6;
-        color: #468847;
-      }
-    `
-  ]
+  styleUrls: ['./offline-banner.component.css']
 })
 export class OfflineBannerComponent implements OnInit {
   network$ = this.service.networkSubject;
@@ -49,7 +24,7 @@ export class OfflineBannerComponent implements OnInit {
   onlineMessage$: Observable<boolean> = of(false);
   wentOffline = false;
 
-  constructor(private service: OfflineBannerService) {}
+  constructor(private service: OfflineBannerService) { }
 
   ngOnInit() {
     this.service.checkHealth();

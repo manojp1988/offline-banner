@@ -1,0 +1,82 @@
+.banner {
+  position: fixed;
+  left: 42%;
+  right: 23%;
+  max-width: 300px;
+  z-index: 2000;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 13px 30px;
+  text-align: center;
+  animation: container-dropin forwards 0.5s 0.5s;
+  visibility: hidden;
+}
+
+.container {
+  position: relative;
+  margin: auto;
+
+}
+
+.offline-ui-waiting {
+  border-radius: 50%;
+  content: " ";
+  display: block;
+  position: absolute;
+  right: 7px;
+  top: 12px;
+  margin-right: 5px;
+  height: 1em;
+  width: 1em;
+  border: 2px solid rgba(0, 0, 0, 0);
+  border-top-color: #7c6d1f;
+  border-left-color: #7c6d1f;
+  opacity: 0.7;
+  animation: offline-rotation 0.7s linear infinite;
+  backface-visibility: hidden;
+  border-radius: 50%;
+
+}
+
+@keyframes offline-rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes container-dropin {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  1% {
+    transform: translateY(-800px);
+    opacity: 0;
+  }
+
+  2% {
+    transform: translateY(-800px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+
+.offline-banner {
+  background-color: #f8ecad;
+  color: #000000;
+}
+
+.online-banner {
+  background-color: #d6e9c6;
+  color: #468847;
+}

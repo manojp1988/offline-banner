@@ -11,7 +11,7 @@ export class OfflineBannerService {
   public networkSubject = new BehaviorSubject<string>('TRYING');
   interval$ = timer(0, 10000);
 
-  constructor(private http: HttpClient, @Inject(UrlConfigService) private url) {}
+  constructor(private http: HttpClient, @Inject(UrlConfigService) private url) { }
 
   checkHealth() {
     this.interval$
