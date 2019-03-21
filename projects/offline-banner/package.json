@@ -1,7 +1,11 @@
 {
   "name": "offline-banner",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "It detects whether frontend is able to connect to backend.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/manojp1988/offline-banner"
+  },
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
